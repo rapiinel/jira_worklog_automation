@@ -33,5 +33,5 @@ Step 5. Check the source files
   2. Worklogs entry 
 
 
-**Note**
-Make sure the jira worklogs entry follow the format we have discussed in the salesops meeting
+> **Note**
+> Make sure the jira worklogs entry follow the format we have discussed in the salesops meeting

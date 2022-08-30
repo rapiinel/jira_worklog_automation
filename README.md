@@ -10,7 +10,7 @@ https://github.com/rapiinel/jira_worklog_automation.git
 
 Step 2. Create a new virtual environment
 ```
-python -m venv tfod
+python -m venv jira_worklogs
 ```
 
 Step 3. Activate your virtual environment

@@ -31,3 +31,7 @@ python -m ipykernel install --user --name=jira_worklogs
 Step 5. Check the source files
   1. Jira Links
   2. Worklogs entry 
+
+
+**Note**
+Make sure the jira worklogs entry follow the format we have discussed in the salesops meeting

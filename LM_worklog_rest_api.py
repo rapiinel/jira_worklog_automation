@@ -35,7 +35,7 @@ class jira_rest_api:
         self.df = pd.read_excel("Worklog Entry Template.xlsx", sheet_name= 'worklog Template')
         self.df['Date'] = pd.to_datetime(self.df['Date'])
         self.df = self.df[(self.df['Date'] >= pd.to_datetime(start_date)) & (self.df['Date'] <= pd.to_datetime(end_date))].copy()
-        print(len(self.df))
+        print(f"Number of records detected: {len(self.df)}")
         self.prep()
         
         with open(credentials) as f:
@@ -57,10 +57,13 @@ class jira_rest_api:
         self.df.reset_index(drop=True, inplace= True)
         
     def log(self):
+        print('-------------Start-------------')
         for index, row in self.df.iterrows():
             response = self.worklog(row['url'], row['payload'])
             print(f"Working on index: {index}, {response.status_code}")
             self.df.loc[index, 'status_code'] = response.status_code
+
+        print('-------------End-------------')
             
     
     def generate_payload(self, timespent, comment, date):
@@ -93,20 +96,21 @@ def main():
     parser = argparse.ArgumentParser(description=PARSER_DESCRIPTION)
     args = parse_arguments(parser, None, None, None)
 
-    print(f"This is args.filename {args.filename}", )
-    print(f"This is args.start_date {args.start_date}")
-    print(f"This is args.end_date {args.end_date}")
+    print(f"This is filename: {args.filename}", )
+    print(f"This is start_date: {args.start_date}")
+    print(f"This is end_date: {args.end_date}")
 
 
     pd.options.display.max_columns = 999
     worklog = jira_rest_api(args.filename, 'credential.json', args.start_date, args.end_date)
     worklog.log()
 
-    print("----------------------------------------------")
-    print("----------------------------------------------")
-    print("----------------------------------------------")
 
-    print(worklog.df.head())
+    print("\n\n----------------------------------------------")
+    print("----------------------------------------------")
+    print("----------------------------------------------")
+    print("For full output detail, please refer to response_status_code")
+    worklog.df.to_csv('response_status_code.csv')
 
 if __name__ == '__main__':
     main()

@@ -39,5 +39,5 @@ python LM_worklog_rest_api.py -f "Worklog Entry Template.xlsx" --start_date "YYY
 ```
 
 > **Note**
-> Make sure the jira worklogs entry follow the format we have discussed in the salesops meeting
-> If your repository is already in your local system, you can skip to step 3
+> 1. Make sure the jira worklogs entry follow the format we have discussed in the salesops meeting
+> 1. If your repository is already in your local system, you can skip to step 3

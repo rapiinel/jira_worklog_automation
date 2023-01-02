@@ -5,7 +5,7 @@ Jira ticket task tracker
 
 Step 1. Clone repository 
 ```
-https://github.com/rapiinel/jira_worklog_automation.git
+git clone https://github.com/rapiinel/jira_worklog_automation.git
 ```
 
 Step 2. Create a new virtual environment

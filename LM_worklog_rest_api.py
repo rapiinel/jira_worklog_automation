@@ -53,6 +53,7 @@ class jira_rest_api:
         self.df['url'] = self.df.apply(lambda x: f"https://legalmatch.atlassian.net/rest/api/3/issue/{x['Project description'].split('/')[-1]}/worklog", axis= 1)
         self.df['timespent'] = self.df.apply(lambda x: x['Time spent (Hr)'] * 60**2, axis= 1)
         self.df.Date = self.df.Date.astype('str')
+        self.df['Comments'] = self.df.apply(lambda x: str(x['Activity Code']) + ' | ' + str(x['Comments']), axis= 1)
         self.df['payload'] = self.df.apply(lambda x: self.generate_payload(x['timespent'], x['Comments'], x['Date']), axis= 1)
         self.df.reset_index(drop=True, inplace= True)
         

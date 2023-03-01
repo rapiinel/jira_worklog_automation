@@ -8,6 +8,11 @@ Step 1. Clone repository
 git clone https://github.com/rapiinel/jira_worklog_automation.git
 ```
 
+Step 1.1 Transfer to the folder created
+```
+ cd jira_worklog_automation
+```
+
 Step 2. Create a new virtual environment
 ```
 python -m venv jira_worklogs

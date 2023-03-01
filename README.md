@@ -13,7 +13,7 @@ Step 2. Create a new virtual environment
 python -m venv jira_worklogs
 ```
 
-Step 3. Activate your virtual environment
+Step 3. Activate your virtual environment (start here if you have already created an environment before)
 ```
 .\jira_worklogs\Scripts\activate # Windows 
 ```

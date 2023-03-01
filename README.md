@@ -22,6 +22,11 @@ Step 3. Activate your virtual environment (start here if you have already create
 ```
 .\jira_worklogs\Scripts\activate
 ```
+step 3.1 run if there is an error during environment activation
+```
+Get-ExecutionPolicy
+Set-ExecutionPolicy -Scope CurrentUser -ExecutionPolicy Unrestricted -Force
+```
 
 Step 4. Install dependencies and add virtual environment to the Python Kernel
 ```

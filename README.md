@@ -20,7 +20,7 @@ python -m venv jira_worklogs
 
 Step 3. Activate your virtual environment (start here if you have already created an environment before)
 ```
-.\jira_worklogs\Scripts\activate # Windows 
+.\jira_worklogs\Scripts\activate
 ```
 
 Step 4. Install dependencies and add virtual environment to the Python Kernel
